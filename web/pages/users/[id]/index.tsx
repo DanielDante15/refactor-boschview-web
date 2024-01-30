@@ -30,7 +30,7 @@ const UserPage: NextPage<Notificate> = ({ notificate }) => {
       try {
         if (userId == undefined) return;
         const response = await axios.get(
-          `http://127.0.0.1:8000/users/${userId}/`
+          `https://digipro-backend.azurewebsites.net/users/${userId}/`
         );
         console.log(response.data);
 
@@ -127,7 +127,7 @@ const UserPage: NextPage<Notificate> = ({ notificate }) => {
                   onClick={() => {
                     axios
                       .delete(
-                        `http://127.0.0.1:8000/users/${data.id}/delete`
+                        `https://digipro-backend.azurewebsites.net/users/${data.id}/delete`
                       )
                       .then(() => router.push("/users"));
                     setOpenDialog(false);

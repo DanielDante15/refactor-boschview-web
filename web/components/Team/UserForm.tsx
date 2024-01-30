@@ -47,7 +47,7 @@ export default function UserForm({
       const getData = async () => {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/users/${user_id}/`
+            `https://digipro-backend.azurewebsites.net/users/${user_id}/`
           );
           setInputUser(response.data)
           console.log(response.data);
@@ -108,7 +108,7 @@ export default function UserForm({
       console.log("Updating project");
 
       const response = axios
-        .patch(`http://127.0.0.1:8000/users/${inputUser.id}/update/`, formData,
+        .patch(`https://digipro-backend.azurewebsites.net/users/${inputUser.id}/update/`, formData,
         )
         .then(() => notificate("User Updated", "success"))
         .then(() => router.push("/users"))
@@ -120,7 +120,7 @@ export default function UserForm({
     } else {
       console.log("Adding new project");
       const response = axios
-        .post(`http://127.0.0.1:8000/users/create`, formData, {
+        .post(`https://digipro-backend.azurewebsites.net/users/create`, formData, {
           params: inputUser,
         })
         .then(() => notificate("User Created", "success"))

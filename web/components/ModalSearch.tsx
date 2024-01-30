@@ -33,7 +33,7 @@ export default function ModalSearch({
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/projects`);
+        const response = await axios.get(`https://digipro-backend.azurewebsites.net/projects`);
         setAllProjects(response.data);
         setFilteredData(response.data);
         setError(null);
