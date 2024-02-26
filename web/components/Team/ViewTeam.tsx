@@ -7,7 +7,7 @@ export default function ViewTeam({ team }: { team: User[] }) {
   return (
     <Box className={styles.teamGrid}>
       {team.map((member, index) => (
-        <Chip key={index} label={member.username} avatar={<Avatar
+        <Chip key={index} label={member.name} avatar={<Avatar
           src={member.profile_picture}
         />}/>
       ))}

@@ -32,11 +32,11 @@ import TeamCard from "../../components/Team/TeamCard";
       setFilteredData(
         allUsers
           .filter((x: User) =>
-            x.username
+            x.name
               .toLowerCase()
               .includes(
                 searchFilter === "" || searchFilter == undefined
-                  ? x.username.toLowerCase()
+                  ? x.name.toLowerCase()
                   : searchFilter.toLowerCase()
               )
           )   

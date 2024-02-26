@@ -8,7 +8,7 @@ import UserForm from "../../../components/Team/UserForm";
 const EditUserPage: NextPage<Notificate> = ({ notificate }) => {
   const router = useRouter();
   const userId = router.query.id;
-  const project_name = router.query.username;
+  const project_name = router.query.name;
 
   if (userId == undefined) return <div>User not found</div>;
 

@@ -82,7 +82,7 @@ const UserPage: NextPage<Notificate> = ({ notificate }) => {
   return (
     <>
       <Head>
-        <title>BoschView | {data.username}</title>
+        <title>BoschView | {data.name}</title>
         <meta name="description" content="" />
         <link
           rel="icon"
@@ -94,7 +94,7 @@ const UserPage: NextPage<Notificate> = ({ notificate }) => {
           {/* HEADER */}
           {renderImage()}
           <Box>
-            <h1>{data.username}</h1>
+            <h1>{data.name}</h1>
             <h3>Stack: {data.stack}</h3>
   
           </Box>

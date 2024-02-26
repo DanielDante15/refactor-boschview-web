@@ -51,7 +51,7 @@ export default function TeamCard({
 
                     <Box>
                         {renderImage()}
-                        <h1>{member.username}</h1>
+                        <h1>{member.name}</h1>
                         <h2>Stack: {member.stack}</h2>
                     </Box>
                     <Box>
@@ -65,7 +65,7 @@ export default function TeamCard({
         if (size != undefined || size == "small") {
             return (
                 <Box className={miniStyles.miniProjectCard}>
-                    <h2>{member.username}</h2>
+                    <h2>{member.name}</h2>
                     <h3>Stack: {member.stack}</h3>
                 </Box>
             );

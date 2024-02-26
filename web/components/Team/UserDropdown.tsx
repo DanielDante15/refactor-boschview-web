@@ -90,8 +90,8 @@ const UserDropdown = ({ users, callback }: { users?: User[], callback: (any?: an
 
                     }
                     }>
-                        <img src={user.profile_picture} alt={user.username} style={{ width: 20, height: 20, marginRight: 8 }} />
-                        {user.username}
+                        <img src={user.profile_picture} alt={user.name} style={{ width: 20, height: 20, marginRight: 8 }} />
+                        {user.name}
                     </MenuItem>
                 ))}
             </Menu>
@@ -102,7 +102,7 @@ const UserDropdown = ({ users, callback }: { users?: User[], callback: (any?: an
 
                     <Chip style={{ marginRight: 6 }} key={index} onDelete={() => {
                         handleDeleteMember(user)
-                    }} label={user.username} avatar={<Avatar
+                    }} label={user.name} avatar={<Avatar
                         src={user.profile_picture}
                     />} />
                 ))}

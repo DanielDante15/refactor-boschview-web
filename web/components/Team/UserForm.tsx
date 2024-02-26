@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Notificate, User } from "../../common/types";
 import styles from "../../styles/components/ProjectForm.module.scss";
+import Dropdown from "../DropDown";
 
 interface UserFormProps {
   user_id?: string;
@@ -31,6 +32,7 @@ export default function UserForm({
   const [confirmPassword, setConfirmPassword] = useState("")
   const [inputUser, setInputUser] = useState<User>({
     id: 0,
+    name: "",
     username: "",
     stack: '',
     profile_picture: "",
@@ -96,6 +98,7 @@ export default function UserForm({
     }
 
     formData.append("username", inputUser.username)
+    formData.append("name", inputUser.name)
     formData.append("stack", inputUser.stack)
 
 
@@ -116,7 +119,7 @@ export default function UserForm({
           console.log(err);
           notificate(`Error: ${err.message}`, "error");
         });
-  
+
     } else {
       console.log("Adding new project");
       const response = axios
@@ -137,6 +140,13 @@ export default function UserForm({
     setInputUser((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+  };
+  const handleStack = (event: any) => {
+    console.log("Testeeeeeee:",event);
+    setInputUser((prevState) => ({
+      ...prevState,
+      ["stack"]: event
     }));
   };
 
@@ -226,38 +236,39 @@ export default function UserForm({
           <TextField
             required
             fullWidth
-            name="username"
+            name="name"
             label={"Name"}
+            onChange={handleChange}
+            value={inputUser.name}
+          />
+          <TextField
+            required
+            fullWidth
+            name="username"
+            label={"Email"}
             onChange={handleChange}
             value={inputUser.username}
           />
 
+          <Dropdown onChange={handleStack} value={inputUser.stack} />
           <TextField
-            required
-            fullWidth
-            name="stack"
-            label={"Stack"}
-            onChange={handleChange}
-            value={inputUser.stack}
-          />
-          <TextField
-            
+
             fullWidth
             type={showPassword ? 'text' : 'password'}
             name="password"
-            
+
             label={"Password"}
             onChange={handlePassword}
           />
           <TextField
-          
+
             type={showPassword ? 'text' : 'password'}
             fullWidth
             name="confirmPassword"
             label={"Confirm Password"}
             onChange={handleConfirmPassword}
           />
-          
+
 
 
         </Box>
