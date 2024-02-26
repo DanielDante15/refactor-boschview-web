@@ -28,7 +28,7 @@ export default function Dropdown({onChange,value}:props) {
       options={stack}
       value={value}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Movie" />}
+      renderInput={(params) => <TextField {...params} label="Select your stack" />}
       onChange={handleChange}
     />
   );
