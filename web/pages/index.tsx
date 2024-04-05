@@ -13,7 +13,7 @@ import axios from "axios";
 const HomePage: NextPage<Notificate> = ({ notificate }) => {
   const router = useRouter();
   const { isLoading, data, error }: FetchResult<Project[]> = useFetch(
-    `https://digipro-backend.azurewebsites.net/projects`
+    `https://digi-pro-dev-webapp-backend.azurewebsites.net/projects`
 
 
   );

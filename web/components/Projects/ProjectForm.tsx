@@ -56,7 +56,7 @@ export default function ProjectForm({
       const getData = async () => {
         try {
           const response = await axios.get(
-            `https://digipro-backend.azurewebsites.net/projects/users/${project_id}`
+            `https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/users/${project_id}`
           );
           setInputProject(response.data);
           setProjectMembers(response.data.students)
@@ -139,7 +139,7 @@ export default function ProjectForm({
       console.log("Updating project");
 
       const response = axios
-        .patch(`https://digipro-backend.azurewebsites.net/projects/${inputProject.id}/update/`, formData,
+        .patch(`https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/${inputProject.id}/update/`, formData,
         )
         .then(() => notificate("Project Updated", "success"))
         .then(() => router.push("/projects"))
@@ -151,7 +151,7 @@ export default function ProjectForm({
     } else {
       console.log("Adding new project");
       const response = axios
-        .post(`https://digipro-backend.azurewebsites.net/projects/create`, formData, {
+        .post(`https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/create`, formData, {
           params: inputProject,
         })
         .then(() => notificate("Project Created", "success"))

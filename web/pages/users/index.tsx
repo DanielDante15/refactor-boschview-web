@@ -52,7 +52,7 @@ import TeamCard from "../../components/Team/TeamCard";
     useEffect(() => {
       const getData = async () => {
         try {
-          const response = await axios.get(`https://digipro-backend.azurewebsites.net/users/projects`);
+          const response = await axios.get(`https://digi-pro-dev-webapp-backend.azurewebsites.net/users/projects`);
           setAllUsers(response.data);
           console.log(response.data);
           

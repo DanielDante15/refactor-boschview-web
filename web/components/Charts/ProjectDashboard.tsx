@@ -30,7 +30,7 @@ export default function ProjectDashboard({
 
     const getData = async () => {
       try {
-        const response = await axios.get(`https://digipro-backend.azurewebsites.net/users/`);
+        const response = await axios.get(`https://digi-pro-dev-webapp-backend.azurewebsites.net/users/`);
         setMembers(response.data)
       } catch (err: any) {
       } 

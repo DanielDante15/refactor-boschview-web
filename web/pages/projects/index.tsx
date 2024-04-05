@@ -72,7 +72,7 @@ const SearchProjectsPage: NextPage<Notificate> = ({ notificate }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`https://digipro-backend.azurewebsites.net/projects/users/`);
+        const response = await axios.get(`https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/users/`);
         setAllProjects(response.data);
         setFilteredData(response.data);
 

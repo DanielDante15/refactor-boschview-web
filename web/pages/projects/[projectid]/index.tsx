@@ -34,7 +34,7 @@ const ProjectPage: NextPage<Notificate> = ({ notificate }) => {
       try {
         if (projectid == undefined) return;
         const response = await axios.get(
-          `https://digipro-backend.azurewebsites.net/projects/users/${projectid}`
+          `https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/users/${projectid}`
         );
  
 
@@ -199,7 +199,7 @@ const ProjectPage: NextPage<Notificate> = ({ notificate }) => {
                   onClick={() => {
                     axios
                       .delete(
-                        `https://digipro-backend.azurewebsites.net/projects/${data.id}/delete`
+                        `https://digi-pro-dev-webapp-backend.azurewebsites.net/projects/${data.id}/delete`
                       )
                       .then(() => router.push("/projects"));
                     setOpenDialog(false);
